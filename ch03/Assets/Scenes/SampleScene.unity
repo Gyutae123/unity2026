@@ -552,6 +552,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 197fd87291e5d8c41a422eae77db1812, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Roulette
+  startSpeed: 20
+  decreaseSpeed: 0.99
 --- !u!212 &1948706403
 SpriteRenderer:
   serializedVersion: 2

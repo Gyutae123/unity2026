@@ -2,6 +2,8 @@ using UnityEngine;
 
 public class Roulette : MonoBehaviour
 {
+    public float startSpeed = 10f;
+    public float decreaseSpeed = 0.97f;
     float rotSpeed = 0;
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
@@ -14,9 +16,11 @@ public class Roulette : MonoBehaviour
     {
         if (Input.GetMouseButtonDown(0))
         {
-            rotSpeed = 10;
+            rotSpeed = startSpeed;
 
         }
         transform.Rotate(0, 0, rotSpeed);
+
+        rotSpeed *= decreaseSpeed;
     }
 }
