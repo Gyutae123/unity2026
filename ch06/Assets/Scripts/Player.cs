@@ -1,5 +1,5 @@
 using UnityEngine;
-
+using UnityEngine.SceneManagement;
 public class Player : MonoBehaviour
 {
     public float jumpForce = 100f;
@@ -65,10 +65,17 @@ public class Player : MonoBehaviour
         //    }
         //}
 
+        if(transform.position.y < -8)
+        {
+            SceneManager.LoadScene(SceneManager.GetActiveScene().name);
+        }
     }
 
-    private void OnTriggerEnter(Collider other)
+
+    private void OnTriggerEnter2D(Collider2D collision)
     {
         Debug.Log("goal");
+        SceneManager.LoadScene("ClearScene");
     }
+
 }
