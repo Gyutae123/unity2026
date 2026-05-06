@@ -15,9 +15,9 @@ RenderSettings:
   m_ObjectHideFlags: 0
   serializedVersion: 10
   m_Fog: 0
-  m_FogColor: {r: 0.5, g: 0.5, b: 0.5, a: 1}
+  m_FogColor: {r: 0.740566, g: 0.740566, b: 0.740566, a: 1}
   m_FogMode: 3
-  m_FogDensity: 0.01
+  m_FogDensity: 0.012
   m_LinearFogStart: 0
   m_LinearFogEnd: 300
   m_AmbientSkyColor: {r: 0.212, g: 0.227, b: 0.259, a: 1}
@@ -26,7 +26,7 @@ RenderSettings:
   m_AmbientIntensity: 1
   m_AmbientMode: 0
   m_SubtractiveShadowColor: {r: 0.42, g: 0.478, b: 0.627, a: 1}
-  m_SkyboxMaterial: {fileID: 10304, guid: 0000000000000000f000000000000000, type: 0}
+  m_SkyboxMaterial: {fileID: 2100000, guid: 6e00f8b39315691449f256740a5cb862, type: 2}
   m_HaloStrength: 0.5
   m_FlareStrength: 1
   m_FlareFadeSpeed: 3
@@ -332,6 +332,37 @@ PrefabInstance:
       insertIndex: -1
       addedObject: {fileID: 162836277}
   m_SourcePrefab: {fileID: 100100000, guid: 567b75c68c5111d458a8bbde205b513d, type: 3}
+--- !u!1 &1726087017
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1726087018}
+  m_Layer: 0
+  m_Name: gener
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1726087018
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1726087017}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -25.11779, y: 0, z: -4.57545}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1770976548
 GameObject:
   m_ObjectHideFlags: 0
@@ -369,7 +400,7 @@ Camera:
   m_Enabled: 1
   serializedVersion: 2
   m_ClearFlags: 1
-  m_BackGroundColor: {r: 0.19215687, g: 0.3019608, b: 0.4745098, a: 0}
+  m_BackGroundColor: {r: 0.39088646, g: 0.4946956, b: 0.6792453, a: 0}
   m_projectionMatrixMode: 1
   m_GateFitMode: 2
   m_FOVAxisMode: 0
@@ -418,13 +449,13 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1770976548}
   serializedVersion: 2
-  m_LocalRotation: {x: -0.18769778, y: 0.46840957, z: -0.10256812, w: -0.8572292}
-  m_LocalPosition: {x: -0.61720276, y: 9.227336, z: -3.6214802}
+  m_LocalRotation: {x: 0.0000003650784, y: 0.000000967644, z: -0.00000010503571, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 0}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_Father: {fileID: 2132057203}
+  m_LocalEulerAnglesHint: {x: 1.776, y: 4.487, z: -0.002}
 --- !u!114 &1770976552
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -536,6 +567,7 @@ GameObject:
   m_Component:
   - component: {fileID: 2132057203}
   - component: {fileID: 2132057202}
+  - component: {fileID: 2132057204}
   m_Layer: 0
   m_Name: BamGen
   m_TagString: Untagged
@@ -556,6 +588,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::BamGener
   bamsongi: {fileID: 7971704950938670294, guid: efc32bc0783493e44b87d1221d90c911, type: 3}
+  throwForce: 3
+  startY: 0
 --- !u!4 &2132057203
 Transform:
   m_ObjectHideFlags: 0
@@ -564,19 +598,34 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2132057201}
   serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -11.99934, y: 0, z: 5.4746}
+  m_LocalRotation: {x: -0.05502878, y: 0.008823432, z: -0.0004881604, w: -0.9984457}
+  m_LocalPosition: {x: -6.0743346, y: 5.844177, z: -9.293393}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
-  m_Children: []
+  m_Children:
+  - {fileID: 1770976551}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &2132057204
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2132057201}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 39e0ef7f218f844479bbfe5be1f9aca3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::PlayerController
+  moveSpeed: 10
+  rotationSpeed: 10
 --- !u!1660057539 &9223372036854775807
 SceneRoots:
   m_ObjectHideFlags: 0
   m_Roots:
-  - {fileID: 1770976551}
   - {fileID: 846420477}
   - {fileID: 1462881674}
   - {fileID: 1936124834}
+  - {fileID: 1726087018}
   - {fileID: 2132057203}
