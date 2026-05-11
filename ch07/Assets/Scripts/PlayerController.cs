@@ -6,7 +6,13 @@ public class PlayerController : MonoBehaviour
     public float moveSpeed = 10f;
     public float rotationSpeed = 1.0f;
 
+    Rigidbody rb;
 
+
+    private void Start()
+    {
+        rb = GetComponent<Rigidbody>();
+    }
     // Update is called once per frame
     void Update()
     {
@@ -18,5 +24,6 @@ public class PlayerController : MonoBehaviour
 
         transform.Translate(0, 0, zSpeed);
         transform.Rotate(0, xSpeed, 0);
+        //rb.linearVelocity = zSpeed * transform.forward;
     }
 }
