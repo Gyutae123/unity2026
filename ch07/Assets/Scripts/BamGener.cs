@@ -6,6 +6,7 @@ public class BamGener : MonoBehaviour
     public GameObject bamsongi;
     public float throwForce = 10f;
     public float startY;
+    public float minPower = 10f;
     // Update is called once per frame
     void Update()
     {
@@ -20,6 +21,7 @@ public class BamGener : MonoBehaviour
             bamsong.transform.position = transform.position;
 
             float power = Input.mousePosition.y - startY;
+            if(power < minPower) {return; }
 
             Vector3 dir = transform.forward + transform.up;
             bamsong.GetComponent<Bamcontroller>().Shoot(dir * power * throwForce);
