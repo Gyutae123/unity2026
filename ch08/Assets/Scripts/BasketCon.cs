@@ -2,10 +2,17 @@ using UnityEngine;
 
 public class BasketCon : MonoBehaviour
 {
+    public AudioClip appleSE;
+    public AudioClip bombSE;
+
+    AudioSource aud;
+
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
         Application.targetFrameRate = 60;
+
+        aud = GetComponent<AudioSource>();
     }
 
     // Update is called once per frame
@@ -25,5 +32,23 @@ public class BasketCon : MonoBehaviour
             }
         }
 
+    }
+
+    private void OnTriggerEnter(Collider other)
+    {
+        if(other.gameObject.tag == "Apple")
+        {
+            aud.PlayOneShot(appleSE);
+            Debug.Log("사과잡기");
+        }
+        else if(other.gameObject.tag == "Bomb")
+        {
+            aud.PlayOneShot(bombSE);
+
+            Debug.Log("폭탄잡기");
+
+        }
+        Debug.Log("잡았다");
+        Destroy(other.gameObject);
     }
 }
