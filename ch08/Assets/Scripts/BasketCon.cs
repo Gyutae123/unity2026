@@ -4,6 +4,7 @@ public class BasketCon : MonoBehaviour
 {
     public AudioClip appleSE;
     public AudioClip bombSE;
+    GameObject director;
 
     AudioSource aud;
 
@@ -13,6 +14,7 @@ public class BasketCon : MonoBehaviour
         Application.targetFrameRate = 60;
 
         aud = GetComponent<AudioSource>();
+        director = GameObject.Find("GameDirector");
     }
 
     // Update is called once per frame
@@ -39,16 +41,16 @@ public class BasketCon : MonoBehaviour
         if(other.gameObject.tag == "Apple")
         {
             aud.PlayOneShot(appleSE);
-            Debug.Log("사과잡기");
+            director.GetComponent<GameDirector>().GetApple();
         }
         else if(other.gameObject.tag == "Bomb")
         {
             aud.PlayOneShot(bombSE);
 
-            Debug.Log("폭탄잡기");
+            director.GetComponent<GameDirector>().GetBomb();
+
 
         }
-        Debug.Log("잡았다");
         Destroy(other.gameObject);
     }
 }

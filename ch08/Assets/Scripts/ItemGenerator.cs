@@ -7,6 +7,8 @@ public class ItemGenerator : MonoBehaviour
 
     public float span = 1f;
     float delta = 0f;
+    public int ratio = 3;
+
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
@@ -17,9 +19,19 @@ public class ItemGenerator : MonoBehaviour
     void Update()
     {
         delta += Time.deltaTime;
+        GameObject item;
         if(delta > span)
         {
-            GameObject item = Instantiate(applePrefab);
+            int dice = Random.Range(0, 10);
+            if (dice < ratio) {
+                item = Instantiate(bombPrefab);
+            }
+            else
+            {
+                item = Instantiate(applePrefab);
+            }
+
+            //GameObject item = Instantiate(applePrefab);
             float x = Random.Range(-1, 2);
             float z = Random.Range(-1, 2);
             item.transform.SetParent(transform);
